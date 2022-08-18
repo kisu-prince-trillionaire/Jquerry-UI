@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">  
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>  
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>  
+    <link rel="stylesheet" href="/resources/demos/style.css"> 
+    
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        h1{
+            text-align: center;
+        }
+        .accoex1{
+            background-color: cyan;
+            padding: 15px;
+            margin: 15px;
+            border: 5px rgb(23, 22, 23) solid;
+            border-radius: 10px;
+        }
+        #accordion-5{font-size: 14px;}
+        .accoex2{
+            background-color: rgb(185, 240, 91);
+            padding: 15px;
+            margin: 15px;
+            border: 5px rgb(23, 22, 23) solid;
+            border-radius: 10px;
+        }
+        .dis{
+            background-color: blue;
+            padding: 5px;
+            margin: 5px;
+            color: white;
+            box-sizing: content-box;
+        }
+        .auto{
+            background-color: rgb(207, 130, 181);
+            padding: 15px;
+            margin: 15px;
+            border: 5px rgb(23, 22, 23) solid;
+            border-radius: 10px;
+        }
+        .uibutton{
+            background-color: rgb(84, 198, 162);
+            padding: 15px;
+            margin: 15px;
+            border: 5px rgb(23, 22, 23) solid;
+            border-radius: 10px;
+        }
+        .date{
+            background-color: rgb(95, 139, 220);
+            padding: 15px;
+            margin: 15px;
+            border: 5px rgb(23, 22, 23) solid;
+            border-radius: 10px;
+        }
+        .ui-widget-header,.ui-state-default, ui-button{  
+            background:#b9cd6d;  
+            border: 1px solid #b9cd6d;  
+            color: #FFFFFF;  
+            font-weight: bold;  
+        }
+        .dialog{
+            background-color: rgb(221, 61, 136);
+            padding: 15px;
+            margin: 15px;
+            border: 5px rgb(23, 22, 23) solid;
+            border-radius: 10px;
+        }
+        .ui-menu {  
+            width: 200px;  
+        }
+        .menu{
+            background-color: rgba(236, 148, 76, 0.619);
+            padding: 15px;
+            margin: 15px;
+            border: 5px rgb(23, 22, 23) solid;
+            border-radius: 10px;
+        }
+        .ui-widget-header {  
+            background: blue;  
+            border: 1px solid #DDDDDD;  
+            color: #333333;  
+            font-weight: bold;  
+         }
+         .progressor{
+            background-color: rgba(87, 227, 58, 0.619);
+            padding: 15px;
+            margin: 15px;
+            border: 5px rgb(23, 22, 23) solid;
+            border-radius: 10px;
+        }
+        fieldset {  
+           border: 0;  
+        }  
+        label {  
+           display: block;  
+           margin: 30px 0 0 0;  
+        }  
+        select {  
+          width: 200px;  
+        }  
+        .overflow {  
+            height: 200px;  
+        }
+        .selectmenu{
+            background-color: rgba(240, 44, 171, 0.952);
+            padding: 15px;
+            margin: 15px;
+            border: 5px rgb(23, 22, 23) solid;
+            border-radius: 10px;
+        }
+        .slider{
+            background-color: rgba(11, 131, 250, 0.619);
+            padding: 15px;
+            margin: 15px;
+            border: 5px rgb(23, 22, 23) solid;
+            border-radius: 10px;
+        }
+    </style>
+    <script>  
+    $(function() {  
+      $( "#accordion" ).accordion();  
+    });  
+    </script>
+          <script>  
+            $(function() {  
+               $( "#accordion-5" ).accordion({  
+                  disabled: false  
+               });  
+               $("input").each(function () {  
+                  $(this).change(function () {  
+                     if ($(this).attr("id") == "disableaccordion") {  
+                        $("#accordion-5").accordion("option", "disabled", true);  
+                     } else {  
+                        $("#accordion-5").accordion("option", "disabled", false);  
+                     }  
+                  });  
+               });  
+            });  
+        </script>
+    <script>  
+        $(function() {  
+          var availableTags = [  
+            "ActionScript",  
+            "AppleScript",  
+            "Asp",  
+            "BASIC",  
+            "C",  
+            "C++",  
+            "Clojure",  
+            "COBOL",  
+            "ColdFusion",  
+            "Erlang",  
+            "Fortran",  
+            "Groovy",  
+            "Haskell",  
+            "Java",  
+            "JavaScript",  
+            "Lisp",  
+            "Perl",  
+            "PHP",  
+            "Python",  
+            "Ruby",  
+            "Scala",  
+            "Scheme"  
+          ];  
+          $( "#tags" ).autocomplete({  
+            source: availableTags  
+          });  
+        });  
+    </script>
+          <script>  
+            $(function() {  
+               $( "#datepicker-1" ).datepicker();  
+            });  
+    </script>
+          <script>  
+            $(function() {  
+               $( "#dialog-1" ).dialog({  
+                  autoOpen: false,    
+               });  
+               $( "#opener" ).click(function() {  
+                  $( "#dialog-1" ).dialog( "open" );  
+               });  
+            });  
+         </script>
+    <script>  
+            $(function() {  
+               $( "#menu-1" ).menu();  
+            }); 
+            $(function() {  
+            $( "#progressbar-1" ).progressbar({  
+               value: 80  
+            });  
+         }); 
+    </script>
+      <script>  
+        $(function() {  
+          $( "#speed" ).selectmenu();  
+        $( "#files" ).selectmenu().selectmenu( "option", "disabled", true );;  
+       $( "#number" )  
+            .selectmenu()  
+            .selectmenu( "menuWidget" )  
+              .addClass( "overflow" );  
+        });  
+        $(function() {  
+            $( "#slider-1" ).slider();  
+        });
+        </script>
+</head>
+<body>
+    <div class="accoex1">
+        <h1>ACCORDION</h1>
+    <div id="accordion">  
+        <h3>What is Java?</h3>  
+        <div>  
+          <p>  
+         Java is a simple, object oriented, concurrent and general purpose programming language.   
+        Some other important features of java are robust, secure, portable, interactive and high performance.   
+        Java was developed by Sun Microsystems in 1995 since then it has become very popular due to its feature  
+         like platform independent and robust in the case of memory management.  
+          </p>    
+        </div>  
+        <h3>Why is it called platform?</h3>  
+        <div>  
+          <p>  
+         Because java has its own run time environment (JRE) and API so it is called platform.  
+          </p>  
+        </div>  
+        <h3>Where is it used?</h3>  
+        <div>  
+          <p>  
+          According to Sun Microsystems, nearly 3 billion devices run java. Some of these devices   
+         are mobile phones, games, robotics, application in banking sector etc.  
+          </p>  
+        </div>  
+        <h3>Why JavaTpoint</h3>  
+        <div>  
+          <ul>  
+            <li>Life Time Validity</li>  
+            <li>Training by Java Professionals</li>  
+            <li>Get an opportunity to work on real time projects</li>  
+             <li>Interaction with Industry Experts</li>  
+              <li>Small Batches to focus on each student</li>  
+          </ul>  
+        </div>  
+        </div> 
+    </div> 
+    <div class="accoex2">
+        <h1>DISABLE/ENABLE ACCORDION</h1>
+        <div id="accordion-5">  
+            <h3>What is Java?</h3>  
+               <div>  
+                  <p>  
+                   Java is a simple, object oriented, concurrent and general purpose programming language.   
+                   Some other important features of java are robust, secure, portable, interactive and high performance.   
+                   Java was developed by Sun Microsystems in 1995 since then it has become very popular due to its feature  
+                   like platform independent and robust in the case of memory management.  
+                  </p>  
+               </div>  
+               <h3>Why is it called Platform?</h3>  
+               <div>  
+                  <p>  
+                  Because java has its own run time environment (JRE) and API so it is called platform.    
+                  </p>  
+               </div>  
+               <h3>Where is it used?</h3>  
+               <div>  
+                  <p>  
+                According to Sun Microsystems, nearly 3 billion devices run java. Some of these devices   
+                are mobile phones, games, robotics, application in banking sector etc.      
+                  </p>  
+                    
+               </div>  
+             <h3>Why JavaTpoint?</h3>  
+                 <div>  
+       <ul>  
+         <li>Life Time Validity</li>  
+         <li>Training by Java Professionals</li>  
+         <li>Get an opportunity to work on real time projects</li>  
+          <li>Interaction with Industry Experts</li>  
+           <li>Small Batches to focus on each student</li>  
+       </ul>  
+     </div>  
+     
+            </div>  
+            <div class="dis" style="margin-top:30px">  
+               <input type="radio" name="disable" id="disableaccordion"    
+                  value="disable">Disable accordion  
+               <input type="radio" name="disable" id="enableaccordion" checked   
+                  value="enable">Enable accordion  
+            </div>
+    </div>
+    <div class="auto">
+        <h1>AUTOCOMPLETE</h1>
+        <div class="ui-widget">  
+            <p>Available Courses:</p><br>  
+             <label for="tags">Tags: </label>  
+             <input id="tags">  
+        </div>  
+    </div>
+    <div class="uibutton">
+        <h1>UI BUTTON</h1>
+        <button id="button-1">A button element</button>  
+        <input id="button-2" type="submit" value="A submit button">  
+        <a id="button-3" href="">An anchor</a>  
+        <input type="checkbox"  id="button-4" >  
+        <label for="button-4">Toggle</label>  
+        <br><br>  
+        <div id="button-5">  
+           <input type="checkbox" id="check1">  
+           <label for="check1">Left</label>  
+           <input type="checkbox" id="check2">  
+           <label for="check2">Middle</label>  
+           <input type="checkbox" id="check3">  
+           <label for="check3">Right</label>  
+        </div>
+    </div>
+    <div class="date">
+        <h1>DATE TIME</h1>
+        <p>Enter Date: <input type="text" id="datepicker-1"></p> 
+    </div>
+    <div class="dialog">
+        <h1>UI DIALOG</h1>
+        <div id="dialog-1" title="Movie Title:Psycho (1960)">"A boy's best friend is his mother." </div>  
+        <button id="opener">Open Dialog</button>
+    </div>
+    <div class="menu">
+        <h1>UI MENU</h1>
+        <ul id="menu-1">  
+            <li><a href="#">C</a></li>  
+            <li><a href="#">C++</a></li>  
+            <li><a href="#">Java</a>  
+               <ul>  
+                  <li><a href="#">Core Java</a></li>  
+                  <li><a href="#">J2EE</a></li>  
+                  <li><a href="#">Spring</a></li>  
+                  <li><a href="#">Hibernate</a></li>  
+                  <li><a href="#">Struts</a></li>  
+               </ul>  
+            </li>  
+            <li><a href="#">JSF</a></li>  
+            <li><a href="#">HTML5</a></li>  
+         </ul>
+    </div>
+    <div class="progressor">
+        <h1>PROGRESS BAR</h1>
+        <div id="progressbar-1"></div>
+    </div>
+    <div class="selectmenu">
+        <h1>SELECT MENU</h1>
+        <div class="demo">  
+   
+            <form action="#">  
+              <fieldset>  
+                <label for="speed">Select a speed</label>  
+                <select name="speed" id="speed">  
+                  <option>Slower</option>  
+                  <option>Slow</option>  
+                  <option selected="selected">Medium</option>  
+                  <option>Fast</option>  
+                  <option>Faster</option>  
+                </select>  
+             <label for="files">Select a file</label>  
+                <select name="files" id="files">  
+                  <optgroup label="Scripts">  
+                    <option value="jquery">jQuery.js</option>  
+                    <option value="jqueryui">ui.jQuery.js</option>  
+                  </optgroup>  
+                  <optgroup label="Other files">  
+                    <option value="somefile">Some unknown file</option>  
+                    <option value="someotherfile">Some other file with a very long option text</option>  
+                  </optgroup>  
+                </select>  
+               
+                <label for="number">Select a number</label>  
+                <select name="number" id="number">  
+                  <option>1</option>  
+                  <option selected="selected">2</option>  
+                  <option>3</option>  
+                  <option>4</option>  
+                  <option>5</option>  
+                  <option>6</option>  
+                  <option>7</option>  
+                  <option>8</option>  
+                  <option>9</option>  
+                  <option>10</option>  
+                  <option>11</option>  
+                  <option>12</option>  
+                  <option>13</option>  
+                  <option>14</option>  
+                  <option>15</option>  
+                  <option>16</option>  
+                  <option>17</option>  
+                  <option>18</option>  
+                  <option>19</option>  
+                </select>  
+              </fieldset>  
+            </form>  
+               
+        </div>
+    </div>
+    <div class="slider">
+        <h1>SLIDER</h1>
+        <div id="slider-1"></div>  
+    </div>
+</body>
+</html>
